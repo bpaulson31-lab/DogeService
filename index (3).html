@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11131a">
+  <meta name="description" content="DogeService is a server-authoritative Roblox profile and data service with persistent player profiles, inventory helpers, autosaving, and a read-only client API.">
+  <title>DogeService — Roblox Profile Service</title>
+  <style>
+    :root{color-scheme:dark;--bg:#0d0f14;--panel:#141720;--panel2:#191d28;--line:#2a3040;--text:#f3f5fa;--muted:#a8b0c1;--accent:#f6c85f;--accent2:#ffe29a;--green:#8ee3b0;--code:#0a0c11;--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#292338 0,transparent 43%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--accent2);text-decoration:none}a:hover{text-decoration:underline}code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace}code{font-size:.91em;color:#ffe8b2;background:#25202a;border:1px solid #393041;border-radius:5px;padding:.12em .35em}pre{margin:0;white-space:pre;overflow:auto;color:#e4e9f4;font-size:13px;line-height:1.65}pre code{padding:0;border:0;background:transparent;color:inherit;font-size:inherit}.wrap{max-width:var(--max);width:calc(100% - 40px);margin:auto}.topbar{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:23px 0;border-bottom:1px solid #ffffff12}.brand{display:flex;gap:11px;align-items:center;font-size:18px;font-weight:800;letter-spacing:-.03em;color:var(--text)}.doge{display:grid;place-items:center;width:39px;height:39px;border-radius:12px;background:linear-gradient(145deg,#ffe59c,#f0b637);font-size:23px;box-shadow:0 7px 25px #f6c85f25}.nav{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:var(--muted)}.nav a{color:var(--muted)}.hero{padding:83px 0 68px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;border:1px solid #4b4432;background:#29251b;color:var(--accent2);font-size:12px;font-weight:750;letter-spacing:.11em;text-transform:uppercase;border-radius:99px;padding:6px 12px}.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 10px #8ee3b077}.hero h1{max-width:900px;margin:22px auto 17px;font-size:clamp(42px,7vw,76px);line-height:1.02;letter-spacing:-.065em}.hero h1 span{color:var(--accent)}.lead{max-width:700px;margin:0 auto;color:var(--muted);font-size:clamp(17px,2vw,20px)}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:29px 0 22px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 19px;border-radius:10px;border:1px solid var(--line);font-size:14px;font-weight:750;background:var(--panel2);color:var(--text)}.btn.primary{background:var(--accent);color:#211909;border-color:var(--accent)}.btn:hover{text-decoration:none;filter:brightness(1.07)}.hint{font-size:12px;color:#8d95a6}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:10px auto 0;max-width:930px;text-align:left}.feature{background:#151822bd;border:1px solid var(--line);border-radius:14px;padding:18px}.feature .ico{font-size:22px}.feature h3{margin:7px 0 4px;font-size:15px}.feature p{margin:0;color:var(--muted);font-size:13px}.section{padding:58px 0;scroll-margin-top:24px}.section-head{max-width:720px;margin-bottom:26px}.kicker{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.section h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.045em;line-height:1.15;margin:8px 0 12px}.section-head p{color:var(--muted);margin:0}.two{display:grid;grid-template-columns:1fr 1fr;gap:17px;align-items:start}.card{min-width:0;border:1px solid var(--line);background:linear-gradient(180deg,#171a24,#12151c);border-radius:15px;overflow:hidden}.card-head{padding:14px 17px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13px;font-weight:800}.tag{font-size:10px;border:1px solid #374539;border-radius:99px;color:var(--green);padding:3px 8px;letter-spacing:.04em;text-transform:uppercase}.code-wrap{padding:17px;background:var(--code)}.note{padding:14px 16px;border-left:3px solid var(--accent);background:#1c1a18;color:var(--muted);font-size:13px;border-radius:0 8px 8px 0;margin-top:16px}.steps{display:grid;gap:12px}.step{display:grid;grid-template-columns:35px 1fr;gap:13px;border:1px solid var(--line);border-radius:13px;padding:16px;background:var(--panel)}.num{display:grid;place-items:center;width:32px;height:32px;border-radius:9px;background:#342d1d;color:var(--accent);font-weight:850}.step h3{margin:0 0 4px;font-size:15px}.step p{margin:0;color:var(--muted);font-size:13px}.tree{margin-top:17px}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}.api{border-collapse:collapse;width:100%;font-size:13px;min-width:480px}.api th,.api td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}.api th{color:#cbd1dd;background:#191c25;font-weight:750}.api tr:last-child td{border-bottom:0}.api td:first-child{white-space:nowrap;color:#ffe0a0}.pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}.pill{border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:var(--panel);font-size:12px;color:#d7dce7}.security{background:linear-gradient(120deg,#171a22,#211c18);border:1px solid #4a3f2c;border-radius:16px;padding:24px;display:grid;grid-template-columns:50px 1fr;gap:15px}.security .big{font-size:30px}.security h3{margin:0 0 7px;font-size:20px}.security p{color:var(--muted);margin:0 0 10px}.security ul{margin:8px 0 0;padding-left:20px;color:#d8dce5}.warning{color:#f2d49a!important;font-size:13px}.foot{padding:28px 0 45px;border-top:1px solid #ffffff14;margin-top:34px;color:#8e96a7;font-size:12px;display:flex;gap:15px;justify-content:space-between;flex-wrap:wrap}.mob{display:none}
+    @media(max-width:780px){.nav{gap:11px}.feature-grid{grid-template-columns:1fr}.hero{padding:58px 0 42px}.two{grid-template-columns:1fr}.section{padding:42px 0}.wrap{width:calc(100% - 28px)}}
+    @media(max-width:470px){.topbar{align-items:flex-start}.nav{max-width:130px;justify-content:flex-end}.hero h1{font-size:43px}.btn{width:100%}.actions{padding:0 12px}.security{grid-template-columns:1fr}.api{min-width:450px}}
+  </style>
+</head>
+<body>
+  <header class="wrap topbar">
+    <a class="brand" href="#top" aria-label="DogeService home"><span class="doge">🐕</span><span>DogeService</span></a>
+    <nav class="nav" aria-label="Main navigation"><a href="#features">Features</a><a href="#install">Install</a><a href="#api">API</a><a href="#security">Security</a><a href="../README.md">README ↗</a></nav>
+  </header>
+  <main id="top">
+    <section class="hero wrap">
+      <span class="eyebrow"><span class="dot"></span> Roblox · Luau · Open source starter</span>
+      <h1>Player data, <span>without</span><br>the spaghetti.</h1>
+      <p class="lead">DogeService is an original profile and data module for Roblox games. Store player progress, manage inventory, read profile values, and keep saved data under server control.</p>
+      <div class="actions"><a class="btn primary" href="#install">Get started <span aria-hidden="true">→</span></a><a class="btn" href="../README.md">Read documentation ↗</a></div>
+      <p class="hint">No build step · Uses Roblox DataStoreService · Client API is read-only</p>
+      <div class="feature-grid" id="features">
+        <article class="feature"><div class="ico">💾</div><h3>Persistent profiles</h3><p>DataStore-backed player records with autosaving and session leases.</p></article>
+        <article class="feature"><div class="ico">🎒</div><h3>Inventory & stats</h3><p>Convenient methods for currency, nested data paths, and item stacks.</p></article>
+        <article class="feature"><div class="ico">🛡️</div><h3>Server-authoritative</h3><p>Clients can read snapshots and updates, but cannot write saved data directly.</p></article>
+      </div>
+    </section>
+
+    <section class="section wrap" id="install">
+      <div class="section-head"><div class="kicker">01 / Quick start</div><h2>Three scripts. One API.</h2><p>Place each source file in the matching Roblox Studio location. DogeService creates its remotes and begins loading data through the bootstrap.</p></div>
+      <div class="two">
+        <div class="steps">
+          <article class="step"><div class="num">1</div><div><h3>Public ModuleScript</h3><p><code>ReplicatedStorage / DogeService</code><br>Paste <code>DogeService.luau</code>.</p></div></article>
+          <article class="step"><div class="num">2</div><div><h3>Server ModuleScript</h3><p><code>ServerScriptService / DogeServiceServer</code><br>Paste <code>DogeServiceServer.luau</code>.</p></div></article>
+          <article class="step"><div class="num">3</div><div><h3>Bootstrap Script</h3><p><code>ServerScriptService / DogeServiceBootstrap</code><br>Paste <code>DogeServiceBootstrap.server.luau</code>.</p></div></article>
+        </div>
+        <div class="card">
+          <div class="card-head"><span>Server example</span><span class="tag">Luau</span></div>
+          <div class="code-wrap"><pre><code>local RS = game:GetService("ReplicatedStorage")
+local DogeService = require(RS:WaitForChild("DogeService"))
+
+local function reward(player)
+    local profile, err = DogeService:WaitForProfile(player, 20)
+    if not profile then
+        warn("Profile not ready:", err)
+        return
+    end
+
+    profile:Increment("Currency.Coins", 100)
+    profile:AddItem("Potion", 2)
+
+    print(profile.Name, profile.UserId)
+    print(profile:Get("Currency.Coins", 0))
+end</code></pre></div>
+        </div>
+      </div>
+      <div class="note"><strong>DataStore setup:</strong> Publish a separate test experience and enable <em>Game Settings → Security → Enable Studio Access to API Services</em> there. Avoid testing against live player data.</div>
+    </section>
+
+    <section class="section wrap" id="examples">
+      <div class="section-head"><div class="kicker">02 / Client & server</div><h2>One module name. Different permissions.</h2><p>Require the public <code>DogeService</code> ModuleScript from either side. On the server it routes to the full implementation; on the client it exposes a read-only profile snapshot.</p></div>
+      <div class="two">
+        <div class="card"><div class="card-head"><span>Client read example</span><span class="tag">Read only</span></div><div class="code-wrap"><pre><code>local RS = game:GetService("ReplicatedStorage")
+local DogeService = require(RS:WaitForChild("DogeService"))
+
+local profile, err = DogeService:WaitForProfile(20)
+if not profile then
+    warn(err)
+    return
+end
+
+local coins = DogeService:GetValue("Currency.Coins", 0)
+local inventory = DogeService:GetInventory()
+print(profile.Name, coins, inventory)
+
+DogeService.ProfileUpdated:Connect(function(snapshot)
+    if snapshot then
+        print("Updated:", snapshot.Data.Currency.Coins)
+    end
+end)</code></pre></div></div>
+        <div class="card"><div class="card-head"><span>Example saved data</span><span class="tag">Template</span></div><div class="code-wrap"><pre><code>{
+  SchemaVersion = 1,
+  Currency = {
+    Coins = 0,
+    Gems = 0,
+  },
+  Stats = {
+    Level = 1,
+    XP = 0,
+    TotalPlaytime = 0,
+  },
+  Inventory = {
+    -- Apple = 5,
+    -- Sword = 1,
+  },
+  Equipped = {},
+  Settings = {
+    Music = true,
+    SoundEffects = true,
+  },
+}</code></pre></div></div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="api">
+      <div class="section-head"><div class="kicker">03 / API overview</div><h2>The calls you'll use most.</h2><p>Path strings make nested values easy to reach. Mutations return a success boolean plus a result or an error message.</p></div>
+      <div class="table-wrap"><table class="api"><thead><tr><th>Server call</th><th>What it does</th></tr></thead><tbody>
+        <tr><td><code>:GetProfile(player)</code></td><td>Returns the active server profile, or <code>nil</code>.</td></tr>
+        <tr><td><code>:WaitForProfile(player, timeout)</code></td><td>Waits for the player's profile to finish loading.</td></tr>
+        <tr><td><code>profile:Get(path, default)</code></td><td>Reads a nested value such as <code>Currency.Coins</code>.</td></tr>
+        <tr><td><code>profile:Set(path, value)</code></td><td>Validates and changes a value.</td></tr>
+        <tr><td><code>profile:Increment(path, amount)</code></td><td>Increments a numeric value.</td></tr>
+        <tr><td><code>profile:AddItem(id, quantity)</code></td><td>Adds an item to an inventory stack.</td></tr>
+        <tr><td><code>profile:RemoveItem(id, quantity)</code></td><td>Removes available inventory quantity.</td></tr>
+        <tr><td><code>profile:HasItem(id, quantity)</code></td><td>Checks if the inventory has enough of an item.</td></tr>
+        <tr><td><code>profile:Save()</code></td><td>Requests an immediate save.</td></tr>
+        <tr><td><code>profile:Sync()</code></td><td>Publishes direct server data changes to the client snapshot.</td></tr>
+      </tbody></table></div>
+      <div class="pill-row"><span class="pill">Autosaving</span><span class="pill">Session leases</span><span class="pill">Template reconciliation</span><span class="pill">Data validation</span><span class="pill">Client update event</span><span class="pill">Manual save</span></div>
+      <p style="font-size:13px;color:var(--muted);margin-top:15px">See the full method list, return values, and examples in the <a href="../README.md">README documentation</a>.</p>
+    </section>
+
+    <section class="section wrap" id="security">
+      <div class="section-head"><div class="kicker">04 / Important</div><h2>Never trust the client with saved data.</h2></div>
+      <div class="security"><div class="big">🔐</div><div><h3>Server is the source of truth.</h3><p>DogeService intentionally rejects client-side write calls. For purchases, rewards, trades, or upgrades, use a game-specific RemoteEvent/RemoteFunction, validate the request on the server, then change the profile server-side.</p><ul><li>Never let clients submit arbitrary profile paths or user IDs.</li><li>Validate currency, ownership, costs, cooldowns, and game rules before any change.</li><li>Use a separate test experience for DataStore testing.</li></ul><p class="warning" style="margin-top:16px">Honest status: this is a starter implementation, not a battle-tested replacement for ProfileStore. Test join/leave, reconnects, concurrent sessions, throttling, schema changes, and shutdown saves before production use.</p></div></div>
+    </section>
+  </main>
+  <footer class="wrap foot"><span>🐕 DogeService · Roblox profile and data service</span><span><a href="../README.md">Documentation</a> · <a href="https://create.roblox.com/docs/cloud-services/data-stores">Roblox DataStores</a> · <a href="https://docs.github.com/en/pages">GitHub Pages</a></span></footer>
+</body>
+</html>
